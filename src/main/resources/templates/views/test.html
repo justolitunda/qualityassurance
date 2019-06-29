@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"  />-->
+    <script th:src="@{webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="../../static/style.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/style2.css" th:href="@{css/style.css}" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/materia/bootstrap.css"  th:href="@{/static/bootstrap/css/bootstrap.min.css}" />
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
+    <div th:replace="fragments/header::header"></div>
+    <div layout:fragment="content">
+
+    </div>
+
+    </div>
+
+    <a class="navbar-brand" href="#">Egerton</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" .bg-success>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Programs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Lecturers</a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+    </span>
+    </div>
+</nav>
+<br><br/>
+<br><br/>
+<br><br/>
+
+<div class="row">
+    <div class="col-md-10 offset-md-2"  >
+
+        <div class="card w-75" >
+            <div class="card-header">
+
+                <h1 class="card-title text-center"> Lecturers And Technicians Evaluation Form</h1>
+
+                <div class="card-body">
+
+
+                </div>
+
+
+                <div class="wrap">
+                    <form  action="#" th:action="@{/evaluation}" th:object="${evaluate}">
+
+
+
+
+                        <!--   <fieldset id="group0">
+                               <label th:class="statement">Q.1) Clarity of the course outline</label>
+                               <ul class='group' >
+                               <ul>
+                                   <li th:each="radioValue: ${singleSelectAllValues}"th:name="group0">
+                                       <input type="radio"
+                                              th:field="*{radioButtonSelectedValue}"
+                                              th:value="${radioValue}" />
+                                       <label
+                                               th:for="${#ids.group0('radioButtonSelectedValue')}"
+                                               th:text="${radioValue}">veryGood</label>
+                                   </li>
+                                   <li th:each="radioValue: ${singleSelectAllValues}" >
+                                       <input type="radio"
+                                              th:field="*{radioButtonSelectedValue}"
+                                              th:value="${radioValue}" />
+                                       <label
+                                               th:for="${#ids.group0('radioButtonSelectedValue')}"
+                                               th:text="${radioValue}">Good</label>
+                                   </li>
+                               </ul>
+                               </ul>
+                           </fieldset>-->
+                        <fieldset id="group1">
+                            <label class="statement">Q.1) Clarity of the course outline</label>
+                            <ul class='group' >
+                                <li>
+                                    <input type="radio" name="group1" th:value="5" id="option1">
+                                    <label th:for="txt1" >Very Good</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group1" value="4" id="option2">
+                                    <label for ="txt2">Good</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group1" value="3"id="option3">
+                                    <label>Fair</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group1" value="2"id="option4">
+                                    <label>Poor</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group1" value="1" id="option5">
+                                    <label>Very Poor</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset id="group2">
+                            <label class="statement">Q.2)The lecturer’s logical presentation of course content</label>
+                            <ul class='group' >
+                                <li>
+                                    <input type="radio" name="group2" value="5" id="txt6" id="option6">
+                                    <label for="txt6">Very Good</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group2" value="4" id="option7">
+                                    <label>Good</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group2" value="3" id="option8">
+                                    <label>Fair</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group2" value="2" id="option9">
+                                    <label>Poor</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="group2" value="1" id="option10">
+                                    <label>Very Poor</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+
+                        <div class="buttons" >
+                            <button class="clear" style="background-color: #4CAF50">Clear</button>
+                            <button class="submit"style="background-color: #4CAF50">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+
+</div>
+</div>
+<div th:replace="fragments/footer::footer"></div>
+</html>

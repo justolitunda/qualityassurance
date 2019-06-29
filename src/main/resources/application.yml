@@ -1,0 +1,21 @@
+
+spring:
+  datasource:
+    username: root
+    password: QaQa2019Sy
+    url: jdbc:mysql://localhost:3306/qa?autoReconnect=true&useSSL=false
+    testWhileIdle: true
+    validationQuery: SELECT 1
+
+  #JPA SETTINGS
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      # dialect: org.hibernate.dialect.MySQL5INNODBDialect
+
+server:
+  port: 8080
+  security.basic.enabled: false

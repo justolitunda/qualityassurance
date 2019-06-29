@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}">
+<head>
+<title>Login Form</title>
+</head>
+<body>
+
+	<div layout:fragment="content" class="container mySpace col-md-6">
+		<!--<div class="alert alert-danger" th:if="${param.error}">
+	
+             <h2>           Invalid StaffNumber or Password</h2>
+	</div>-->
+		<div class="error" th:if="${param.error == 'badCredentialsisException'}" th:with="errorMsg=#{login.badCredentials}">
+			<span class="errorMsg"><span th:text="${errorMsg}"></span> </p>
+			</span>
+		</div>
+		<form th:action="@{/login}"  method="post">
+
+			<div class="form-group">
+				<label for="staffNumber" class="form-control-label" >Staff Number</label> <input
+					type="text" class="form-control"  id="staffNumber" name="username" />
+			
+			</div>
+			<div class="form-group">
+				<label for="password" class="form-control-label">Password</label> <input
+					type="password" class="form-control" 
+					id="password"  name="password"/>
+				
+
+			</div>
+			
+			<input type="submit" value="Submit" class="btn btn-primary" style="background-color: #3d8b40" />
+
+		</form>
+	</div>
+</body>
+</html>
